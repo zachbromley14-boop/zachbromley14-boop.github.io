@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zach's Ski & Mountain Adventures</title>
+   
+    <link rel="stylesheet" href="scratch-style.css">
+</head>
+<body>
+
+    
+    <header id="top">
+        <h1>Zach's Ski Adventure Page</h1>
+        <nav>
+            <a href="#favorite-days" class="nav-link">Favorite Ski Days</a>
+            <a href="#video" class="nav-link">Ski Video</a>
+            <a href="#tableau" class="nav-link">Snow Data (Tableau)</a>
+            <a href="#webapp" class="nav-link">Ski Guessing Game</a>
+            <a href="index.html" class="nav-link">Back to Resume Site</a>
+        </nav>
+    </header>
+
+  
+    <div class="content">
+
+        
+        <div class="section intro">
+            <h2>Why I Love the Mountains</h2>
+            <p>
+                Skiing fresh powder, exploring new terrain, and spending long days in the mountains are some of my
+                favorite things in life. I grew up skiing and being in the mountains so it has just become part of my life. This page is a playground to experiment with HTML, CSS, video, Tableau,
+                and a tiny web app while talking about something I enjoy.
+            </p>
+
+            
+            <figure>
+    <img src="skigear.jpeg" alt="Wearing ski helmet and goggles" class="feature-image">
+    <figcaption>A dream day at Big Sky Montana: blue sky, lots of friends, and steep lines.</figcaption>
+</figure>
+
+        </div>
+
+        
+        <div class="section" id="favorite-days">
+            <h2>My Top 3 Ski Days (with Gear Breakdown)</h2>
+            <p>
+                Below is a list of three of my favorite types of ski days. Each one includes
+                what gear I’d bring.
+            </p>
+
+
+            <ol>
+                <li>
+                    Deep Powder Day
+                    <ul>
+                        <li>Wide skis with good float</li>
+                        <li>Powder-specific ski boots</li>
+                        <li>Avalanche gear if backcountry (beacon, shovel, probe)</li>
+                        <li>Goggles with low-light lenses</li>
+                    </ul>
+                </li>
+                <li>
+                    Spring Ski Tour
+                    <ul>
+                        <li>Touring skis with skins</li>
+                        <li>Lightweight helmet and sunglasses</li>
+                        <li>Layers for warm uphill and cool downhill</li>
+                        <li>Plenty of water and snacks</li>
+                    </ul>
+                </li>
+                <li>
+                    Resort Laps with Friends
+                    <ul>
+                        <li>Everyday all-mountain skis</li>
+                        <li>Comfortable boots for long days</li>
+                        <li>Music playlist for the energy</li>
+                        <li>Post-ski food spot planned (Cafe Rio is always a good one)</li>
+                    </ul>
+                </li>
+            </ol>
+
+  
+            <p class="anchor-note">
+                Want to jump to the video section?
+                <a href="#video" class="anchor-link">Click here to go to the ski video ↓</a>
+            </p>
+        </div>
+
+        <!-- Section: YouTube video -->
+        <div class="section" id="video">
+            <h2>Favorite Ski Video Inspiration</h2>
+            <p>
+                Here’s an embedded YouTube video to show some big mountain skiing.
+            </p>
+
+            <div class="video-container">
+ <div class="video-container">
+        <iframe 
+         width="560" 
+         height="315"
+            src="https://www.youtube.com/embed/KDTrdxXm7-8"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+         allowfullscreen>
+        </iframe>
+    </div>
+
+
+        <!-- Section: Tableau embed -->
+        <div class="section" id="tableau">
+            <h2>Snowfall & Mountain Data (Tableau)</h2>
+            <p>
+                Below is a placeholder for a live interactive Tableau graph. It shows weather in Utah.
+            </p>
+
+            <div class="tableau-container">
+                <!-- SAMPLE TABLEAU EMBED: replace with your own from Tableau Public -->
+                <div class='tableauPlaceholder' id='viz1764817099131' style='position: relative'><noscript><a href='#'><img alt='Dash1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;H4&#47;H4XJRQDFX&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='path' value='shared&#47;H4XJRQDFX' /> <param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;H4&#47;H4XJRQDFX&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1764817099131');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else { vizElement.style.width='100%';vizElement.style.height='1377px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement); 
+                </script>
+            </div>
+        </div>
+
+        <!-- Section: Web app link -->
+        <div class="section" id="webapp">
+    <h2>Try My Ski Number Guessing Game</h2>
+    <p>
+        As part of this project, I built a small ski-themed number guessing game with the help of AI.
+        It’s a simple app where you try to guess a secret number between 1 and 20.
+    </p>
+    <p>
+        <a href="app.html" class="app-link">Play the Ski Number Guessing Game →</a>
+    </p>
+</div>
+
+    </div>
+
+    <!-- Back-to-top link (on-page anchor back to #top) -->
+    <footer>
+        <a href="#top" class="back-to-top">Back to top ↑</a>
+    </footer>
+</body>
+</html>

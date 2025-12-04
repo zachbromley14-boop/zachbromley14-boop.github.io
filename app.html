@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ski Number Guessing Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- All styles in this file (required for the assignment) -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(180deg, #203a59, #5ca8d8);
+            color: #f7fbff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .game-container {
+            background: rgba(0, 0, 0, 0.25);
+            padding: 25px 30px;
+            border-radius: 12px;
+            max-width: 400px;
+            width: 90%;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            text-align: center;
+        }
+
+        h1 {
+            margin-top: 0;
+            margin-bottom: 8px;
+        }
+
+        p {
+            margin-top: 5px;
+            margin-bottom: 10px;
+        }
+
+        input[type="number"] {
+            padding: 8px;
+            border-radius: 6px;
+            border: none;
+            width: 80px;
+            text-align: center;
+            margin-right: 8px;
+        }
+
+        button {
+            padding: 8px 14px;
+            border-radius: 6px;
+            border: none;
+            background-color: #f7fbff;
+            color: #203a59;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #d9f3ff;
+        }
+
+        #message {
+            margin-top: 12px;
+            min-height: 24px;
+            font-weight: 600;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 15px;
+            color: #f7fbff;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <h1>Ski Number Guessing Game</h1>
+        <p>
+            I picked a secret number between <strong>1 and 20</strong>.<br>
+            Guess the number and see if you “land” the perfect ski line.
+        </p>
+
+        <div>
+            <input type="number" id="guess" min="1" max="20" />
+            <button id="guessButton">Guess</button>
+        </div>
+
+        <div id="message"></div>
+
+        <button id="resetButton">Reset Game</button>
+
+        <a href="scratch.html" class="back-link">⬅ Back to Scratch Page</a>
+    </div>
+
+    <!-- All JavaScript in this same file (also required) -->
+    <script>
+        let secretNumber;
+        let attempts;
+
+        function startGame() {
+            secretNumber = Math.floor(Math.random() * 20) + 1; // 1–20
+            attempts = 0;
+            document.getElementById('message').textContent = "Take your best shot!";
+            document.getElementById('guess').value = "";
+        }
+
+        function checkGuess() {
+            const input = document.getElementById('guess');
+            const value = Number(input.value);
+            const message = document.getElementById('message');
+
+            if (!value || value < 1 || value > 20) {
+                message.textContent = "Enter a number between 1 and 20.";
+                return;
+            }
+
+            attempts++;
+
+            if (value === secretNumber) {
+                message.textContent = `Perfect line! You guessed it in ${attempts} tries.`;
+            } else if (value < secretNumber) {
+                message.textContent = "Too low — like staying on the bunny hill. Go higher!";
+            } else {
+                message.textContent = "Too high — you overshot the cliff. Go lower!";
+            }
+        }
+
+        document.getElementById('guessButton').addEventListener('click', checkGuess);
+        document.getElementById('resetButton').addEventListener('click', startGame);
+
+        // Allow Enter key to submit
+        document.getElementById('guess').addEventListener('keydown', function (e) {
+            if (e.key === 'Enter') {
+                checkGuess();
+            }
+        });
+
+        // Start the first game on page load
+        startGame();
+    </script>
+</body>
+</html>
